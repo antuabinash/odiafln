@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Tiles for Audio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>ଚଢେଇ ଓ ବଗ</h1>
+    
+    <div class="audio-tiles" id="tiles-container">
+        <!-- Tile 1 -->
+        <div class="audio-tile" onclick="playAudio('audio1', 'image1.jpg')"> 
+            <img src="image1.jpg" alt="Image 1">
+        </div>
+
+        <!-- Tile 2 -->
+        <div class="audio-tile" onclick="playAudio('audio2', 'image2.jpg')"> 
+            <img src="image2.jpg" alt="Image 2">
+        </div>
+
+        <!-- Tile 3 -->
+        <div class="audio-tile" onclick="playAudio('audio3', 'image3.jpg')"> 
+            <img src="image3.jpg" alt="Image 3">
+        </div>
+
+        <!-- Tile 4 -->
+        <div class="audio-tile" onclick="playAudio('audio4', 'image4.jpg')"> 
+            <img src="image4.jpg" alt="Image 4">
+        </div>
+
+        <!-- Tile 5 -->
+        <div class="audio-tile" onclick="playAudio('audio5', 'image5.jpg')"> 
+            <img src="image5.jpg" alt="Image 5">
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="audio1" src="audio1.mp3"></audio>
+    <audio id="audio2" src="audio2.mp3"></audio>
+    <audio id="audio3" src="audio3.mp3"></audio>
+    <audio id="audio4" src="audio4.mp3"></audio>
+    <audio id="audio5" src="audio5.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
