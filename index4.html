@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Odia Alphabet Stroke Writing</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #canvasContainer {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    #canvas {
+        border: 1px solid #000;
+        background-color: #fff;
+        touch-action: none; /* Disable default touch actions */
+    }
+    .button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<h1>ଲିଖନ ଅଭ୍ଯାସ</h1>
+<div id="canvasContainer">
+    <canvas id="canvas" width="300" height="300"></canvas>
+</div>
+<div>
+    <button class="button" onclick="previousLetter()">Previous</button>
+    <button class="button" onclick="nextLetter()">Next</button>
+    <button class="button" onclick="clearCanvas()">Clear</button>
+</div>
+
+<script>
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+    let drawing = false;
+    let currentLetterIndex = -1;
+    let letters = ['ଅ', 'ଆ', 'ଇ', 'ଈ', 'ଉ', 'ଊ', 'ଋ', 'ଏ', 'ଐ', 'ଓ', 'ଔ']; // Add more letters as needed
+    
+    function selectLetter(letter) {
+        // Clear canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Draw letter with half transparency
+        ctx.font = '250px Arial'; // Adjusted font size
+        ctx.textAlign = 'center'; // Center the text horizontally
+        ctx.textBaseline = 'middle'; // Center the text vertically
+        ctx.globalAlpha = 0.5; // Set transparency
+        ctx.fillText(letter, canvas.width / 2, canvas.height / 1.7); // Center the text
+        ctx.globalAlpha = 1; // Reset transparency
+    }
+    
+    function previousLetter() {
+        currentLetterIndex = (currentLetterIndex - 1 + letters.length) % letters.length;
+        selectLetter(letters[currentLetterIndex]);
+    }
+    
+    function nextLetter() {
+        currentLetterIndex = (currentLetterIndex + 1) % letters.length;
+        selectLetter(letters[currentLetterIndex]);
+    }
+    
+    function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('touchstart', startDrawing);
+    
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('touchmove', draw);
+    
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('touchend', stopDrawing);
+    
+    function startDrawing(e) {
+        drawing = true;
+        draw(e);
+    }
+    
+    function draw(e) {
+        if (!drawing) return;
+        
+        let x, y;
+        if (e.type.startsWith('touch')) {
+            e.preventDefault(); // Prevent scrolling on touch devices
+            x = e.touches[0].clientX - canvas.getBoundingClientRect().left;
+            y = e.touches[0].clientY - canvas.getBoundingClientRect().top;
+        } else {
+            x = e.offsetX;
+            y = e.offsetY;
+        }
+        
+        ctx.lineWidth = 15; // Set a larger brush size
+        ctx.lineTo(x, y);
+        ctx.stroke();
+    }
+    
+    function stopDrawing() {
+        drawing = false;
+        ctx.beginPath(); // Start a new line for the next stroke
+    }
+</script>
+</body>
+</html>
