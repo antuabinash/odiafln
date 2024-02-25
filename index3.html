@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Odia Alphabets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .alphabet {
+            display: inline-block;
+            margin: 10px;
+            border: 2px solid #333;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>'ଅ' ଠାରୁ 'ଲ' ଶିଖିବା</h1>
+    </header>
+    <main>
+        <div class="alphabet" onclick="playAudio('1.mp3')">ଅ</div>
+        <div class="alphabet" onclick="playAudio('2.mp3')">ଆ</div>
+        <div class="alphabet" onclick="playAudio('3.mp3')">ଇ</div>
+        <div class="alphabet" onclick="playAudio('4.mp3')">ଈ</div>
+        <div class="alphabet" onclick="playAudio('5.mp3')">ଉ</div>
+        <div class="alphabet" onclick="playAudio('6.mp3')">ଊ</div>
+        <div class="alphabet" onclick="playAudio('7.mp3')">ଋ</div>
+        <div class="alphabet" onclick="playAudio('8.mp3')">ଏ</div>
+        <div class="alphabet" onclick="playAudio('9.mp3')">ଐ</div>
+        <div class="alphabet" onclick="playAudio('10.mp3')">ଓ</div>
+        <div class="alphabet" onclick="playAudio('11.mp3')">ଔ</div>
+        <div class="alphabet" onclick="playAudio('12.mp3')">କ</div>
+        <div class="alphabet" onclick="playAudio('13.mp3')">ଖ</div>
+        <div class="alphabet" onclick="playAudio('14.mp3')">ଗ</div>
+        <div class="alphabet" onclick="playAudio('15.mp3')">ଘ</div>
+        <div class="alphabet" onclick="playAudio('16.mp3')">ଙ</div>
+        <div class="alphabet" onclick="playAudio('17.mp3')">ଚ</div>
+        <div class="alphabet" onclick="playAudio('18.mp3')">ଛ</div>
+        <div class="alphabet" onclick="playAudio('19.mp3')">ଜ</div>
+        <div class="alphabet" onclick="playAudio('20.mp3')">ଝ</div>
+        <div class="alphabet" onclick="playAudio('21.mp3')">ଞ</div>
+        <div class="alphabet" onclick="playAudio('22.mp3')">ଟ</div>
+        <div class="alphabet" onclick="playAudio('23.mp3')">ଠ</div>
+        <div class="alphabet" onclick="playAudio('24.mp3')">ଡ଼</div>
+        <div class="alphabet" onclick="playAudio('25.mp3')">ଢ</div>
+        <div class="alphabet" onclick="playAudio('26.mp3')">ଣ</div>
+        <div class="alphabet" onclick="playAudio('27.mp3')">ତ</div>
+        <div class="alphabet" onclick="playAudio('28.mp3')">ଥ</div>
+        <div class="alphabet" onclick="playAudio('29.mp3')">ଦ</div>
+        <div class="alphabet" onclick="playAudio('30.mp3')">ଧ</div>
+        <div class="alphabet" onclick="playAudio('31.mp3')">ନ</div>
+        <div class="alphabet" onclick="playAudio('32.mp3')">ପ</div>
+        <div class="alphabet" onclick="playAudio('33.mp3')">ଫ</div>
+        <div class="alphabet" onclick="playAudio('34.mp3')">ବ</div>
+        <div class="alphabet" onclick="playAudio('35.mp3')">ଭ</div>
+        <div class="alphabet" onclick="playAudio('36.mp3')">ମ</div>
+        <div class="alphabet" onclick="playAudio('37.mp3')">ଯ</div>
+        <div class="alphabet" onclick="playAudio('38.mp3')">ର</div>
+        <div class="alphabet" onclick="playAudio('39.mp3')">ଳ</div>
+        <div class="alphabet" onclick="playAudio('40.mp3')">ୱ</div>
+        <div class="alphabet" onclick="playAudio('41.mp3')">ଶ</div>
+        <div class="alphabet" onclick="playAudio('42.mp3')">ଷ</div>
+        <div class="alphabet" onclick="playAudio('43.mp3')">ସ</div>
+        <div class="alphabet" onclick="playAudio('44.mp3')">ହ</div>
+        <div class="alphabet" onclick="playAudio('45.mp3')">କ୍ଷ</div>
+        <div class="alphabet" onclick="playAudio('46.mp3')">ୟ</div>
+        <div class="alphabet" onclick="playAudio('47.mp3')">ଲ</div>
+    </main>
+
+    <!-- Audio files -->
+    <audio id="audioPlayer" controls style="display:none;"></audio>
+
+    <script>
+        function playAudio(audioSrc) {
+            var audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.src = audioSrc;
+            audioPlayer.play();
+        }
+    </script>
+</body>
+</html>

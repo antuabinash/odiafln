@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangular Tiles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .tile {
+            width: 200px;
+            height: 150px;
+            margin: 20px;
+            background-color: #fff;
+            border: 2px solid #333;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ଓଡ଼ିଆ FLN</h1>
+    </header>
+    <main>
+        <div class="tile" onclick="goToIndex(1)">ଖେଳ</div>
+        <div class="tile" onclick="goToIndex(2)">ବହି</div>
+        <div class="tile" onclick="goToIndex(3)">ଅ, ଆ</div>
+        <div class="tile" onclick="goToIndex(4)">Tile 4</div>
+        <div class="tile" onclick="goToIndex(5)">Tile 5</div>
+        <div class="tile" onclick="goToIndex(6)">Tile 6</div>
+        <div class="tile" onclick="goToIndex(7)">Tile 7</div>
+        <div class="tile" onclick="goToIndex(8)">Tile 8</div>
+        <div class="tile" onclick="goToIndex(9)">Tile 9</div>
+        <div class="tile" onclick="goToIndex(10)">Tile 10</div>
+    </main>
+
+    <script>
+        function goToIndex(index) {
+            window.location.href = "index" + index + ".html";
+        }
+    </script>
+</body>
+</html>

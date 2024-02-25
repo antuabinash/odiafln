@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Tiles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .pdf-tile {
+            width: 90%;
+            max-width: 300px;
+            height: 100px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 18px; /* Increased font size */
+            font-weight: bold; /* Bold text */
+        }
+
+        .pdf-tile:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <!-- Tile 1 -->
+    <div class="pdf-tile" onclick="openPdf('mathworkbook.pdf')">ଗଣିତ କାର୍ଯ୍ୟ ପୁସ୍ତିକା</div>
+
+    <!-- Tile 2 -->
+    <div class="pdf-tile" onclick="openPdf('path/to/pdf2.pdf')">Tile 2</div>
+
+    <!-- Tile 3 -->
+    <div class="pdf-tile" onclick="openPdf('path/to/pdf3.pdf')">Tile 3</div>
+
+    <!-- Tile 4 -->
+    <div class="pdf-tile" onclick="openPdf('path/to/pdf4.pdf')">Tile 4</div>
+
+    <!-- Tile 5 -->
+    <div class="pdf-tile" onclick="openPdf('path/to/pdf5.pdf')">Tile 5</div>
+
+    <!-- Tile 6 -->
+    <div class="pdf-tile" onclick="openPdf('path/to/pdf6.pdf')">Tile 6</div>
+
+    <!-- Tile 7 -->
+    <div class="pdf-tile" onclick="openPdf('path/to/pdf7.pdf')">Tile 7</div>
+</div>
+
+<script>
+    function openPdf(pdfPath) {
+        // You can customize how you want to open the PDF, for example, opening in a new tab
+        window.open(pdfPath, '_blank');
+    }
+</script>
+
+</body>
+</html>

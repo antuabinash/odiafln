@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Formation Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 10px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+     table {
+      border-collapse: collapse;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 300px;
+      border: 4px solid #000; /* Add a border to the table */
+    }
+
+    td {
+      width: 33.33%;
+      height: 75px;
+      text-align: center;
+      border: 4px solid #ddd;
+      cursor: pointer;
+    }
+
+    td:hover {
+      background-color: #f5f5f5; /* Add a background color on hover */
+    }
+
+    #display-box {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    #word-board {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+     button#clear-button,
+    button#enter-button,
+    button#clear-all-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    button#clear-button {
+      background-color: #ff6347; /* Red */
+    }
+
+    button#enter-button {
+      background-color: #32cd32; /* Green */
+    }
+
+    button#clear-all-button {
+      background-color: #808080; /* Gray */
+    }
+  </style>
+</head>
+<body>
+
+<h1>ଶବ୍ଦ ଖେଳ</h1>
+
+<table id="alphabet-table">
+  <tr>
+    <td onclick="addLetter('ଅ')">ଅ</td>
+    <td onclick="addLetter('ମ')">ମ</td>
+    <td onclick="addLetter('କ')">କ</td>
+  </tr>
+  <tr>
+    <td onclick="addLetter('ର')">ର</td>
+    <td onclick="addLetter('ଳ')">ଳ</td>
+    <td onclick="addLetter('ତ')">ତ</td>
+  </tr>
+  <tr>
+    <td onclick="addLetter('ଶ')">ଶ</td>
+    <td onclick="addLetter('ଣ')">ଣ</td>
+    <td onclick="addLetter('ବ')">ବ</td>
+  </tr>
+</table>
+
+<div id="display-box"></div>
+
+<!-- Place "Clear" and "Enter" buttons in a row -->
+<div style="text-align: center;">
+  <button id="enter-button" onclick="enterWord()">Enter</button>
+  <button id="clear-button" onclick="clearWord()">Clear</button>
+  
+</div>
+
+<div id="word-board"></div>
+<div style="text-align: center;">
+
+<!-- Added Clear All Words button -->
+<button id="clear-all-button" onclick="clearAllWords()">Clear All Words</button>
+
+<script>
+  let selectedWord = "";
+  let enteredWords = [];
+
+  function addLetter(letter) {
+    selectedWord += letter;
+    updateDisplay();
+  }
+
+  function clearWord() {
+    selectedWord = "";
+    updateDisplay();
+    playSound('sample.mp3');
+  }
+
+  function enterWord() {
+    if (selectedWord.length > 0) {
+      enteredWords.push(selectedWord);
+      selectedWord = "";
+      updateDisplay();
+      updateWordBoard();
+      playSound('sample1.mp3');
+    }
+  }
+
+  function updateDisplay() {
+    document.getElementById("display-box").innerText = "Selected Word: " + selectedWord;
+  }
+
+  function updateWordBoard() {
+    document.getElementById("word-board").innerText = "Entered Words: " + enteredWords.join(', ');
+  }
+
+  function clearAllWords() {
+    enteredWords = [];
+    updateWordBoard();
+  }
+
+  function playSound(soundFile) {
+    const audio = new Audio(soundFile);
+    audio.play();
+  }
+</script>
+
+</body>
+</html>
